@@ -1,8 +1,10 @@
+import heroImg from '../assets/Sunrise-hero-bg.png'
+
 function Home() {
     return (
         <div className="home-component">
             <div className="home-hero-bg">
-                <img src="src/assets/Sunrise-hero-bg.png" className="Hero-Bg" alt="Hero Background"></img>
+                <img src={heroImg} className="Hero-Bg" alt="Hero Background" />
             </div>
         </div>
     )
