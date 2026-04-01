@@ -1,13 +1,26 @@
-import heroImg from '../assets/Sunrise-hero-bg.png'
+import React from 'react';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import About from '../components/About';
+import Rooms from '../components/Rooms';
+import Services from '../components/Services';
+import Restaurant from '../components/Restaurant';
+import Footer from '../components/Footer';
+import BookingModal from '../components/BookingModal';
 
-function Home() {
-    return (
-        <div className="home-component">
-            <div className="home-hero-bg">
-                <img src={heroImg} className="Hero-Bg" alt="Hero Background" />
-            </div>
-        </div>
-    )
-}
+const Home: React.FC = () => {
+  return (
+    <div className="app-container">
+      <Navbar />
+      <Hero />
+      <About />
+      <Rooms />
+      <Services />
+      <Restaurant />
+      <Footer />
+      <BookingModal />
+    </div>
+  );
+};
 
-export default Home
+export default Home;
