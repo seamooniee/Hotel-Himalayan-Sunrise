@@ -1,0 +1,42 @@
+/* Restaurant.css */
+.restaurant-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.restaurant-image-container {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.restaurant-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.restaurant-img:hover {
+  transform: scale(1.05);
+}
+
+.restaurant-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #475569;
+  margin-bottom: 20px;
+}
+
+.restaurant-text ul {
+  margin-bottom: 30px;
+}
+
+.restaurant-text li {
+  font-size: 16px;
+  color: #334155;
+  margin-bottom: 10px;
+  font-weight: 500;
+}

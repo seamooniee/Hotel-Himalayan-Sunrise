@@ -3,6 +3,7 @@ import attractionKali from '../assets/attraction_kali.png';
 import attractionNamobuddha from '../assets/attraction_namobuddha.png';
 import attractionPanauti from '../assets/attraction_panauti.png';
 import attractionSunrise from '../assets/attraction_sunrise.png';
+import './Attractions.css';
 
 const Attractions: React.FC = () => {
   const attractions = [

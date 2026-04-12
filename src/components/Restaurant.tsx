@@ -1,4 +1,5 @@
 import React from 'react';
+import './Restaurant.css';
 import { useModal } from '../context/ModalContext';
 import restaurantImg from '../assets/restaurant_food.png';
 

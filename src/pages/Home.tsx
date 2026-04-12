@@ -8,6 +8,7 @@ import Services from '../components/Services';
 import Restaurant from '../components/Restaurant';
 import Footer from '../components/Footer';
 import BookingModal from '../components/BookingModal';
+import BookingBar from '../components/BookingBar';
 
 const Home: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const Home: React.FC = () => {
       <Services />
       <Restaurant />
       <Footer />
+      <BookingBar />
       <BookingModal />
     </div>
   );

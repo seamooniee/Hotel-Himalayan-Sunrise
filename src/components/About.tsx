@@ -1,5 +1,6 @@
 import React from 'react';
 import { useModal } from '../context/ModalContext';
+import './About.css';
 
 const About: React.FC = () => {
   const { openModal } = useModal();

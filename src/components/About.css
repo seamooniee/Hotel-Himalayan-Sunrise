@@ -1,0 +1,63 @@
+/* About.css */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #475569;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.btn-primary:hover {
+  background-color: #1e40af;
+  box-shadow: 0 4px 12px rgba(30,58,138,0.3);
+  transform: translateY(-2px);
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.stat-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h3 {
+  font-size: 36px;
+  color: #27bac4;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.stat-card p {
+  color: #64748b;
+  font-size: 15px;
+  font-weight: 500;
+}

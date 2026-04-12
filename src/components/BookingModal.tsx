@@ -1,5 +1,6 @@
 import React from 'react';
 import { useModal } from '../context/ModalContext';
+import './BookingModal.css';
 
 const BookingModal: React.FC = () => {
   const { isModalOpen, closeModal } = useModal();

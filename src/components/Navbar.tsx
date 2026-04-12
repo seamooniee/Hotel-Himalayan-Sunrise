@@ -1,4 +1,5 @@
 import React from 'react';
+import './Navbar.css';
 import { useScroll, scrollToSection } from '../hooks/useScroll';
 import { useModal } from '../context/ModalContext';
 
