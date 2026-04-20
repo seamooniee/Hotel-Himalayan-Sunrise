@@ -35,7 +35,7 @@ const Rooms: React.FC = () => {
           </div>
           
           <div className="room-card">
-            <div className="room-image" style={{ backgroundImage: `url(${hotelImg})` }}></div>
+            <div className="room-image" style={{ backgroundImage: `url(${roomImg})` }}></div>
             <div className="room-content">
               <h3>Standard Double Room</h3>
               <p>Cozy and comfortable room perfect for couples or solo travelers.</p>

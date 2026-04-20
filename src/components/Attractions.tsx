@@ -30,10 +30,10 @@ const Attractions: React.FC = () => {
     },
     {
       id: 4,
-      title: 'Himalayan Sunrise View',
+      title: 'Kailashnath Mahadev Statue (Sanga)',
       image: attractionSunrise,
-      description: "Dhulikhel is renowned for stunning sunrise views. Witness the sun painting the peaks of Langtang, Ganesh Himal, and even Everest in magical hues, with a sea of clouds often filling the valley below.",
-      meta: "Distance: From hotel terrace · Best for: Breathtaking views, Morning meditation"
+      description: "Just a 20-minute drive from the hotel, you can visit the world's tallest Shiva statue. Standing at an impressive 43.5 meters (143 feet) tall, this copper-painted statue overlooking the village of Sanga is a sight to behold. It's a popular spot for both pilgrims and tourists and makes for a memorable photo opportunity .",
+      meta: "Distance from hotel: 20-minute drive · Best for: Spiritual tourism, sightseeing, selfies"
     }
   ];
 
@@ -63,12 +63,12 @@ const Attractions: React.FC = () => {
                 
                 {/* Back Side */}
                 <div className="attraction-back">
-                  <div className="back-content">
-                    <h3 className="back-title">{item.title}</h3>
+                  <h3 className="back-title">{item.title}</h3>
+                  <div className="description-scroll-area">
                     <p className="description-text">{item.description}</p>
-                    <div className="meta-info">
-                      <p>{item.meta}</p>
-                    </div>
+                  </div>
+                  <div className="meta-info">
+                    <p>{item.meta}</p>
                   </div>
                 </div>
               </div>
