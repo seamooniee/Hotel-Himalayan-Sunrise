@@ -8,11 +8,16 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "server": "node server.cjs"
   },
   "dependencies": {
     "@expo/metro-runtime": "~55.0.9",
+    "better-sqlite3": "^12.9.0",
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
     "expo": "^55.0.15",
+    "express": "^5.2.1",
     "react": "^19.2.4",
     "react-dom": "19.2.0",
     "react-native-web": "^0.21.0"
@@ -22,6 +27,8 @@
     "@eslint/js": "^9.39.4",
     "@rolldown/plugin-babel": "^0.2.1",
     "@types/babel__core": "^7.20.5",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
     "@types/node": "^24.12.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
