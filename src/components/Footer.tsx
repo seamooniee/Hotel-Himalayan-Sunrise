@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="footer-col">
           <h3>Contact Us</h3>
-          <p>📍 Namo Buddha Road, Dhulikhel</p>
+          <p>📍 Resort Marga, Dhulikhel</p>
           <p>📞 +977 123 456 789</p>
           <p>✉️ info@himalayansunrise.com</p>
         </div>

@@ -11,7 +11,7 @@ const Restaurant: React.FC = () => {
       <div className="section-container">
         <div className="restaurant-layout">
           <div className="restaurant-image-container">
-             <img src={restaurantImg} alt="Hotel Restaurant" className="restaurant-img" />
+            <img src={restaurantImg} alt="Hotel Restaurant" className="restaurant-img" />
           </div>
           <div className="restaurant-text">
             <h2 className="section-title">Dine With A View</h2>

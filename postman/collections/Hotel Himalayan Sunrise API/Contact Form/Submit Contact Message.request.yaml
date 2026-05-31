@@ -1,0 +1,17 @@
+$kind: http-request
+description: Submit an inquiry message using the contact form
+url: "{{baseUrl}}/api/contact"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "name": "Rajesh Hamal",
+      "email": "rajesh.hamal@example.com",
+      "phone": "+977 9812345678",
+      "subject": "Group Retreat Inquiry",
+      "message": "Hello, we are planning a team retreat for 15 people in mid-July. Do you offer corporate packages?"
+    }
+order: 1000

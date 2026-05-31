@@ -1,0 +1,269 @@
+{
+	"info": {
+		"_postman_id": "7a35e4d2-d81b-4b1d-a3df-81284d728512",
+		"name": "Hotel Himalayan Sunrise API",
+		"description": "API collection for Hotel Himalayan Sunrise backend services, including Room Booking, Contact Messages, and Admin login.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Admin Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"password\": \"himalayan123\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/admin/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"login"
+							]
+						},
+						"description": "Authenticate admin user using a password"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rooms",
+			"item": [
+				{
+					"name": "Get Rooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/rooms",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"rooms"
+							]
+						},
+						"description": "Retrieve all hotel rooms"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Room",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Executive Sunrise Suite\",\n  \"type\": \"Suite\",\n  \"price\": 7500,\n  \"status\": \"available\",\n  \"description\": \"Super luxurious suite featuring panoramic 180-degree sunrise view with jacuzzi.\",\n  \"features\": [\n    \"King Bed\",\n    \"Jacuzzi\",\n    \"Balcony\",\n    \"Free WiFi\",\n    \"Espresso Machine\"\n  ],\n  \"imageUrl\": \"deluxe_room.png\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/rooms",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"rooms"
+							]
+						},
+						"description": "Add a new room to the database (Admin/Management)"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "Get Bookings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/bookings",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"bookings"
+							]
+						},
+						"description": "Retrieve list of all bookings (Admin dashboard)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Booking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"room_id\": \"REPLACE_WITH_VALID_ROOM_OBJECTID\",\n  \"guest_name\": \"Jane Doe\",\n  \"email\": \"jane.doe@example.com\",\n  \"phone\": \"+977 9876543210\",\n  \"check_in\": \"2026-06-01\",\n  \"check_out\": \"2026-06-05\",\n  \"message\": \"Please arrange for a pick-up from Kathmandu airport.\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/bookings",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"bookings"
+							]
+						},
+						"description": "Book a room with specific check-in and check-out dates"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Booking Status",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"confirmed\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/bookings/:id/status",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"bookings",
+								":id",
+								"status"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "REPLACE_WITH_BOOKING_OBJECTID",
+									"description": "Booking document ID"
+								}
+							]
+						},
+						"description": "Confirm or cancel a booking (Admin)"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contact Form",
+			"item": [
+				{
+					"name": "Submit Contact Message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Rajesh Hamal\",\n  \"email\": \"rajesh.hamal@example.com\",\n  \"phone\": \"+977 9812345678\",\n  \"subject\": \"Group Retreat Inquiry\",\n  \"message\": \"Hello, we are planning a team retreat for 15 people in mid-July. Do you offer corporate packages?\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/contact",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"contact"
+							]
+						},
+						"description": "Submit an inquiry message using the contact form"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Contact Messages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/contact",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"contact"
+							]
+						},
+						"description": "Retrieve list of all contact inquiries (Admin Dashboard)"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3001",
+			"type": "string"
+		}
+	]
+}

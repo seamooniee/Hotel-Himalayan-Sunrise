@@ -9,7 +9,7 @@
 .restaurant-image-container {
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .restaurant-img {
@@ -39,4 +39,22 @@
   color: #334155;
   margin-bottom: 10px;
   font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .restaurant-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .restaurant-image-container {
+    order: -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .restaurant-text p,
+  .restaurant-text li {
+    font-size: 15px;
+  }
 }

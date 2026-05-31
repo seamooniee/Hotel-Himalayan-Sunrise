@@ -1,0 +1,5 @@
+$kind: http-request
+description: Retrieve list of all bookings (Admin dashboard)
+url: "{{baseUrl}}/api/bookings"
+method: GET
+order: 1000

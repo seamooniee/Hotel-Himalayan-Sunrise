@@ -1,0 +1,13 @@
+$kind: http-request
+description: Authenticate admin user using a password
+url: "{{baseUrl}}/api/admin/login"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "password": "himalayan123"
+    }
+order: 1000

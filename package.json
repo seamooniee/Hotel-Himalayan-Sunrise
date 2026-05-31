@@ -2,25 +2,27 @@
   "name": "hotel-himalayan-sunrise",
   "private": true,
   "version": "0.0.0",
-  "main": "node_modules/expo/AppEntry.js",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"vite\" \"node server/index.cjs\"",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "server": "node server.cjs"
+    "server": "node server/index.cjs"
   },
   "dependencies": {
     "@expo/metro-runtime": "~55.0.9",
     "better-sqlite3": "^12.9.0",
     "body-parser": "^2.2.2",
     "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
     "expo": "^55.0.15",
     "express": "^5.2.1",
-    "react": "^19.2.4",
-    "react-dom": "19.2.0",
-    "react-native-web": "^0.21.0"
+    "mongoose": "^9.6.2",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-native-web": "^0.21.0",
+    "react-router-dom": "^7.15.1"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
@@ -34,6 +36,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
     "babel-plugin-react-compiler": "^1.0.0",
+    "concurrently": "^9.2.1",
     "eslint": "^9.39.4",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",

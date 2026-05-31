@@ -1,20 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useModal } from '../context/ModalContext';
 import './BookingModal.css';
 
+interface Room {
+  id: string;
+  name: string;
+  type: string;
+  price: number;
+}
+
 const BookingModal: React.FC = () => {
   const { isModalOpen, closeModal } = useModal();
+  const [rooms, setRooms] = useState<Room[]>([]);
   const [formData, setFormData] = useState({
     guest_name: '',
     email: '',
     phone: '',
     check_in: '',
     check_out: '',
-    message: ''
+    message: '',
+    room_id: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  useEffect(() => {
+    if (isModalOpen && rooms.length === 0) {
+      fetch('/api/rooms')
+        .then(res => res.json())
+        .then(data => setRooms(data))
+        .catch(err => console.error("Failed to fetch rooms", err));
+    }
+  }, [isModalOpen, rooms.length]);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -24,15 +42,12 @@ const BookingModal: React.FC = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('http://localhost:3001/api/bookings', {
+      const response = await fetch('/api/bookings', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...formData,
-          room_id: 1 // Default to first room for now
-        }),
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
@@ -43,7 +58,8 @@ const BookingModal: React.FC = () => {
           phone: '',
           check_in: '',
           check_out: '',
-          message: ''
+          message: '',
+          room_id: ''
         });
         closeModal();
       } else {
@@ -77,6 +93,24 @@ const BookingModal: React.FC = () => {
               required 
               placeholder="John Doe" 
             />
+          </div>
+
+          <div className="form-group">
+            <label>Room Preference</label>
+            <select 
+              name="room_id" 
+              value={formData.room_id} 
+              onChange={handleInputChange} 
+              required
+              className="room-select"
+            >
+              <option value="">Select a room...</option>
+              {rooms.map(room => (
+                <option key={room.id} value={room.id}>
+                  {room.name} (Rs. {room.price}/night)
+                </option>
+              ))}
+            </select>
           </div>
           
           <div className="form-row">

@@ -29,15 +29,52 @@
 }
 
 .attractions-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding-bottom: 30px;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+  scroll-snap-type: x mandatory;
+}
+
+.attractions-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.attractions-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.attractions-grid::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 10px;
 }
 
 .attraction-card {
-  perspective: 1000px;
+  flex: 0 0 calc(25% - 18px);
   height: 420px;
   cursor: pointer;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 1200px) {
+  .attraction-card {
+    flex: 0 0 calc(33.333% - 16px);
+  }
+}
+
+@media (max-width: 900px) {
+  .attraction-card {
+    flex: 0 0 calc(50% - 12px);
+  }
+}
+
+@media (max-width: 600px) {
+  .attraction-card {
+    flex: 0 0 85%;
+  }
 }
 
 .attraction-inner {
@@ -45,27 +82,28 @@
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-  border-radius: 20px;
-}
-
-.attraction-card:hover .attraction-inner {
-  transform: rotateY(180deg);
-}
-
-.attraction-front, .attraction-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   border-radius: 20px;
   overflow: hidden;
 }
 
+.attraction-front, .attraction-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .attraction-front {
   background-color: #bbb;
+  transform: translateX(0);
+}
+
+.attraction-card:hover .attraction-front {
+  transform: translateX(-100%);
 }
 
 .attraction-img {
@@ -96,12 +134,16 @@
 .attraction-back {
   background-color: #1e3a8a;
   color: white;
-  transform: rotateY(180deg);
+  transform: translateX(100%);
   display: flex;
   flex-direction: column;
   height: 100%;
   text-align: left;
   box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
+}
+
+.attraction-card:hover .attraction-back {
+  transform: translateX(0);
 }
 
 .back-title {
@@ -155,4 +197,162 @@
   font-weight: 500;
   line-height: 1.4;
   margin: 0;
+}
+
+.scroll-indicator-overlay {
+  position: absolute;
+  top: 0;
+  height: 420px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.scroll-indicator-overlay.right-overlay {
+  right: 0;
+  justify-content: flex-end;
+  padding-right: 15px;
+  background: linear-gradient(to right, transparent, rgba(238, 242, 246, 0.9));
+}
+
+.scroll-indicator-overlay.left-overlay {
+  left: 0;
+  justify-content: flex-start;
+  padding-left: 15px;
+  background: linear-gradient(to left, transparent, rgba(238, 242, 246, 0.9));
+}
+
+.arrow-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  color: #1e3a8a;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.arrow-circle.arrow-right {
+  animation: bounceRight 2s infinite;
+}
+
+.arrow-circle.arrow-left {
+  animation: bounceLeft 2s infinite;
+}
+
+.arrow-circle:hover {
+  background-color: #1e3a8a;
+  color: white;
+  animation-play-state: paused;
+}
+
+.arrow-circle svg {
+  width: 24px;
+  height: 24px;
+}
+
+@keyframes bounceRight {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(8px);
+  }
+}
+
+@keyframes bounceLeft {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-8px);
+  }
+}
+
+@media (max-width: 768px) {
+  .attractions-section {
+    padding: 60px 20px 80px;
+  }
+
+  .attractions-title {
+    font-size: 26px;
+  }
+
+  .left-underline {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .attractions-description {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+
+  .attraction-card {
+    height: 360px;
+  }
+
+  .scroll-indicator-overlay {
+    height: 360px;
+    width: 48px;
+  }
+
+  .arrow-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .scroll-indicator-overlay.right-overlay {
+    padding-right: 8px;
+  }
+
+  .scroll-indicator-overlay.left-overlay {
+    padding-left: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .attractions-section {
+    padding: 48px 16px 72px;
+  }
+
+  .attraction-card {
+    height: 320px;
+  }
+
+  .scroll-indicator-overlay {
+    height: 320px;
+    width: 36px;
+  }
+
+  .attraction-name {
+    font-size: 16px;
+  }
+}
+
+@media (hover: none) {
+  .attraction-card:hover .attraction-front {
+    transform: translateX(0);
+  }
+
+  .attraction-card:hover .attraction-back {
+    transform: translateX(100%);
+  }
+
+  .attraction-card:focus-within .attraction-front,
+  .attraction-card:active .attraction-front {
+    transform: translateX(-100%);
+  }
+
+  .attraction-card:focus-within .attraction-back,
+  .attraction-card:active .attraction-back {
+    transform: translateX(0);
+  }
 }

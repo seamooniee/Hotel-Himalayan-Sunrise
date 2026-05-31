@@ -1,3 +1,30 @@
+# Dependencies
+node_modules
+
+# Environment & secrets (keep .env.example files for reference)
+.env
+.env.*
+!.env.example
+!**/.env.example
+server/.env
+
+# Build output
+dist
+dist-ssr
+*.tsbuildinfo
+
+# Deploy archives (generated from dist/)
+dist.zip
+dist-old.zip
+dist-*.zip
+dist-*.zip.backup
+
+# Local databases
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
 # Logs
 logs
 *.log
@@ -6,20 +33,29 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+dev_server.log
 
-node_modules
-dist
-dist-ssr
-*.local
-.agent
+# OS files
+.DS_Store
+**/.DS_Store
+Thumbs.db
 
-# Editor directories and files
+# Editor & IDE
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Local tooling / agent cache
+.agent
+.postman
+
+# Unconverted or duplicate source media (use .png/.jpg/.webp in repo)
+*.heic
+
+# Vite cache
+.vite

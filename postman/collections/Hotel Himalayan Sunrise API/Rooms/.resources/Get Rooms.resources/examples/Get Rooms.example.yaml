@@ -1,0 +1,77 @@
+$kind: http-example
+description: Retrieve all hotel rooms
+request:
+  url: "{{baseUrl}}/api/rooms"
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    x-powered-by: Express
+    access-control-allow-origin: "*"
+    content-type: application/json; charset=utf-8
+    content-length: "1194"
+    etag: W/"4aa-gQCOJZCFajb2sKaRFn2OLLViFS8"
+    date: Thu, 28 May 2026 04:05:09 GMT
+    connection: keep-alive
+    keep-alive: timeout=5
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "_id": "6a17aef6de6be1eea9149332",
+          "name": "Deluxe Sunrise Room",
+          "type": "Deluxe",
+          "price": 3500,
+          "status": "available",
+          "description": "Experience luxury with panoramic views of the Himalayas right from your bed.",
+          "features": [
+            "King Bed",
+            "Balcony",
+            "Free WiFi",
+            "AC"
+          ],
+          "imageUrl": "deluxe_room.png",
+          "createdAt": "2026-05-28T02:56:54.208Z",
+          "updatedAt": "2026-05-28T02:56:54.208Z",
+          "id": "6a17aef6de6be1eea9149332"
+        },
+        {
+          "_id": "6a17aef6de6be1eea9149333",
+          "name": "Standard Double Room",
+          "type": "Standard",
+          "price": 2500,
+          "status": "available",
+          "description": "Cozy and comfortable room perfect for couples or solo travelers.",
+          "features": [
+            "Queen Bed",
+            "En-suite",
+            "Free WiFi",
+            "Hot Water"
+          ],
+          "imageUrl": "deluxe_room.png",
+          "createdAt": "2026-05-28T02:56:54.208Z",
+          "updatedAt": "2026-05-28T02:56:54.208Z",
+          "id": "6a17aef6de6be1eea9149333"
+        },
+        {
+          "_id": "6a17aef6de6be1eea9149334",
+          "name": "Family Suite",
+          "type": "Suite",
+          "price": 5500,
+          "status": "available",
+          "description": "Spacious suite designed for families offering comfort and amazing views.",
+          "features": [
+            "2 Queen Beds",
+            "Living Area",
+            "Free WiFi",
+            "Mini Bar"
+          ],
+          "imageUrl": "deluxe_room.png",
+          "createdAt": "2026-05-28T02:56:54.208Z",
+          "updatedAt": "2026-05-28T02:56:54.208Z",
+          "id": "6a17aef6de6be1eea9149334"
+        }
+      ]
+order: 1779941115098

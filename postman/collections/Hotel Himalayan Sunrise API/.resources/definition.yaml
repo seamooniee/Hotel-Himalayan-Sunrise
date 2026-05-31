@@ -1,0 +1,4 @@
+$kind: collection
+description: API collection for Hotel Himalayan Sunrise backend services, including Room Booking, Contact Messages, and Admin login.
+variables:
+  baseUrl: http://localhost:3001

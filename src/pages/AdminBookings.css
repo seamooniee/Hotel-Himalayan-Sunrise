@@ -1,0 +1,170 @@
+.admin-container {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  padding: 40px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.admin-header h1 {
+  color: #1e293b;
+  font-size: 28px;
+  margin: 0;
+}
+
+.btn-back {
+  padding: 10px 20px;
+  background-color: #e2e8f0;
+  color: #475569;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-back:hover {
+  background-color: #cbd5e1;
+}
+
+.admin-content {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.admin-content h2 {
+  color: #334155;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.admin-error {
+  color: #dc2626;
+  background-color: #fee2e2;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.bookings-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.bookings-table th, .bookings-table td {
+  padding: 15px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.bookings-table th {
+  background-color: #f8fafc;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.bookings-table td {
+  color: #334155;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.text-muted {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.status-select {
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  border: 1px solid transparent;
+  cursor: pointer;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  background-size: 8px auto;
+  padding-right: 25px;
+  transition: all 0.2s;
+}
+
+.status-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.status-select.status-pending {
+  background-color: #fef3c7;
+  color: #d97706;
+  border-color: #fde68a;
+}
+
+.status-select.status-confirmed {
+  background-color: #d1fae5;
+  color: #059669;
+  border-color: #a7f3d0;
+}
+
+.status-select.status-cancelled {
+  background-color: #fee2e2;
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+.message-cell {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+  .admin-container {
+    padding: 20px 16px;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .admin-header h1 {
+    font-size: 22px;
+  }
+
+  .admin-content {
+    padding: 20px 16px;
+  }
+
+  .bookings-table th,
+  .bookings-table td {
+    padding: 12px 10px;
+    font-size: 13px;
+  }
+
+  .message-cell {
+    max-width: 120px;
+  }
+}

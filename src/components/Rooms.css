@@ -90,3 +90,22 @@
   background: #27bac4;
   color: white;
 }
+
+@media (max-width: 768px) {
+  .rooms-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .room-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .btn-outline {
+    width: 100%;
+    text-align: center;
+    padding: 12px 16px;
+  }
+}

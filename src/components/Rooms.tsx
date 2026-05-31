@@ -2,7 +2,7 @@ import React from 'react';
 import { useModal } from '../context/ModalContext';
 import './Rooms.css';
 import roomImg from '../assets/deluxe_room.png';
-import hotelImg from '../assets/hotel.png';
+
 
 const Rooms: React.FC = () => {
   const { openModal } = useModal();

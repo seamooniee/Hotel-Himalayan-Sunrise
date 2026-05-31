@@ -61,3 +61,28 @@
   font-size: 15px;
   font-weight: 500;
 }
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-stats {
+    order: -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    padding: 24px;
+  }
+
+  .stat-card h3 {
+    font-size: 30px;
+  }
+}

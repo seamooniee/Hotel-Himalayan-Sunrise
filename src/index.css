@@ -10,6 +10,18 @@ body {
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
   background-color: #0b1120;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE10+/Edge */
+  user-select: none;         /* Standard */
+}
+
+/* Ensure inputs and textareas are still selectable and typable */
+input, textarea {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 
 a {
@@ -25,4 +37,9 @@ button {
   cursor: pointer;
   border: none;
   font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }

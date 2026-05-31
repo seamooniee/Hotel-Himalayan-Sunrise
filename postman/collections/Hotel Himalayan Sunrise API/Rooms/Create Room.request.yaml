@@ -1,0 +1,25 @@
+$kind: http-request
+description: Add a new room to the database (Admin/Management)
+url: "{{baseUrl}}/api/rooms"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "name": "Executive Sunrise Suite",
+      "type": "Suite",
+      "price": 7500,
+      "status": "available",
+      "description": "Super luxurious suite featuring panoramic 180-degree sunrise view with jacuzzi.",
+      "features": [
+        "King Bed",
+        "Jacuzzi",
+        "Balcony",
+        "Free WiFi",
+        "Espresso Machine"
+      ],
+      "imageUrl": "deluxe_room.png"
+    }
+order: 2000

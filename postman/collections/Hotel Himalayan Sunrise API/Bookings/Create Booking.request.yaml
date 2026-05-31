@@ -1,0 +1,19 @@
+$kind: http-request
+description: Book a room with specific check-in and check-out dates
+url: "{{baseUrl}}/api/bookings"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "room_id": "REPLACE_WITH_VALID_ROOM_OBJECTID",
+      "guest_name": "Jane Doe",
+      "email": "jane.doe@example.com",
+      "phone": "+977 9876543210",
+      "check_in": "2026-06-01",
+      "check_out": "2026-06-05",
+      "message": "Please arrange for a pick-up from Kathmandu airport."
+    }
+order: 2000
