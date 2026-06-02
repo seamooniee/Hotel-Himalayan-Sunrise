@@ -19,6 +19,7 @@ const Footer: React.FC = () => {
             <li><button onClick={() => scrollToSection('services')}>Services</button></li>
           </ul>
         </div>
+        
         <div className="footer-col">
           <h3>Contact Us</h3>
           <p>📍 Resort Marga, Dhulikhel</p>
