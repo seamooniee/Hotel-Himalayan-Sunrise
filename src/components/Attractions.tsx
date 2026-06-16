@@ -5,7 +5,7 @@ import attractionDhulikhel from '../assets/attraction_dhulikhel.png';
 import attractionSunrise from '../assets/attraction_sunrise.png';
 import attractionPanauti from '../assets/attraction_panauti.png';
 import attractionNagarkot from '../assets/attraction_nagarkot.png';
-import attractionBhaktapur from '../assets/attraction_bhaktapur.png';
+import attractionBhaktapur from '../assets/attraction_Bhaktapur.png';
 import attractionPatan from '../assets/attraction_patan.png';
 
 import './Attractions.css';
