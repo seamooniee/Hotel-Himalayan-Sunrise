@@ -23,8 +23,8 @@ const Services: React.FC = () => {
           </div>
           <div className="service-card">
             <div className="service-icon">🏔️</div>
-            <h3>Guided Tours</h3>
-            <p>Explore Namo Buddha and surrounding hiking trails with our expert guides.</p>
+            <h3>Event Hall</h3>
+            <p>We have a spacious event hall for your events, gatherings and weddings.</p>
           </div>
           <div className="service-card">
             <div className="service-icon">🔥</div>
